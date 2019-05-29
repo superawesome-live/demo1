@@ -6,9 +6,6 @@ steps:
     args: ['cp', 'quickstart.py', 'gs://demonstration-wonderland-composer-bucket/dags']
 
   - name: gcr.io/cloud-builders/gcloud
-    args: ['composer', 'set', 'composer/location', 'us-central1']
-
-  - name: gcr.io/cloud-builders/gcloud
     args: 
       [
         'composer', 
