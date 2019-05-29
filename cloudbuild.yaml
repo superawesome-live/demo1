@@ -17,6 +17,7 @@ steps:
         'dags', 
         'import', 
         '--environment', 'usertest', 
+        '--location', 'us-central1',
         '--source', 'gs://demonstration-wonderland-composer-bucket/dags/quickstart.py'
       ]
 
