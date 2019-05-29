@@ -64,7 +64,7 @@ default_dag_args = {
 
 # [START composer_quickstart_schedule]
 with models.DAG(
-        'composer_sample_quickstart',
+        'composer_cloudbuild_demo',
         # Continue to run DAG once per day
         schedule_interval=datetime.timedelta(days=1),
         default_args=default_dag_args) as dag:
