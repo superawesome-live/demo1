@@ -1,8 +1,22 @@
 steps:
   - name: gcr.io/cloud-builders/git
     args: ['clone', 'https://github.com/superawesome-live/demo1']
+
   - name: gcr.io/cloud-builders/gsutil
     args: ['cp', 'quickstart.py', 'gs://demonstration-wonderland-composer-bucket/dags']
+
   - name: gcr.io/cloud-builders/gcloud
-   args: ['composer', 'environments', 'storage', 'dags', 'import', '--environment', 'usertest', '--location', 'us-central1', '--source', 'gs://demonstration-wonderland-composer-bucket/dags/quickstart.py']
+    args: ['composer', 'set', 'composer/location', 'us-central1']
+
+  - name: gcr.io/cloud-builders/gcloud
+    args: 
+      [
+        'composer', 
+        'environments', 
+        'storage', 
+        'dags', 
+        'import', 
+        '--environment', 'usertest', 
+        '--source', 'gs://demonstration-wonderland-composer-bucket/dags/quickstart.py'
+      ]
 
